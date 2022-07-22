@@ -79,22 +79,22 @@ INSERT INTO book(book_name, author, details)
 INSERT INTO book(book_name, author, details)
     VALUES('The Titans Curse', 'Rick Riordian', 'Third part of the five part series');
 
-INSERT INTO book(book_name, author)
+INSERT INTO book(book_name, author, details)
     VALUES('The Battle of the Labyrinth', 'Rick Riordian', 'Fourth part of the five part series');
 
-INSERT INTO book(book_name, author)
+INSERT INTO book(book_name, author, details)
     VALUES('The Last Olympian', 'Rick Riordian', 'Fifth part of the five part series');
 
-INSERT INTO book(book_name, author)
+INSERT INTO book(book_name, author, details)
     VALUES('The Great Gatsby', 'F. Scott Fitzgerald');
     
-INSERT INTO book(book_name, author)
+INSERT INTO book(book_name, author, details)
     VALUES("Blade Runner", 'Philip K. Dick', 'Classic Sci-fi Novel');
 
-INSERT INTO book(book_name, author)
+INSERT INTO book(book_name, author, details)
     VALUES('The Hunger Games', 'Suzanne Collins', 'Sci-fi Trilogy');
 
-INSERT INTO book(book_name, author)
+INSERT INTO book(book_name, author, details)
     VALUES('Charlotees Web', 'E.B. White', 'A timeless classic');
 
 /*
