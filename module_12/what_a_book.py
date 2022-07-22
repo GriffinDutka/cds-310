@@ -34,7 +34,7 @@ def show_books(_cursor):
     _cursor.execute("SELECT book_id, book_name, author, details FROM book")
     # obtain results from the cursor
     books = _cursor.fetchall()
-    print("\n --- Book Listing ---")
+    print("\n --- Book Listing ---\n")
     # iterate player data set and display results
     for book in books:
         print(" Book ID: {}\n Book Name: {}\n Author: {}\n Details: {}\n".format(book[0], book[1], book[2], book[3]))
@@ -42,7 +42,7 @@ def show_books(_cursor):
 def show_locations(_cursor):
     _cursor.execute("SELECT store_id, locale from store")
     locations = _cursor.fetchall()
-    print("\n --- Store Locations ---")
+    print("\n --- Store Locations ---\n")
     for location in locations:
         print("  Locale: {}\n".format(location[1]))
 
@@ -61,12 +61,12 @@ def validate_user():
 def show_account_menu():
     """ display user account menu """
     try:
-        print("\n      --- Customer Menu ---")
+        print("\n      --- Customer Menu ---\n")
         print("        1. Wishlist\n        2. Add Book\n        3. Main Menu")
-        account_option = int(input("        <Example input: 1 for wishlist>: "))
+        account_option = int(input("        Example input (enter 1 for wishlist): "))
         return account_option
     except ValueError:
-        print("\n  You entered an invalid number, program is being terminated...\n")
+        print("\n You entered an invalid number, program is being terminated...\n")
         sys.exit(0)
 
 def show_wishlist(_cursor, _user_id):
@@ -77,7 +77,7 @@ def show_wishlist(_cursor, _user_id):
                     "INNER JOIN book ON wishlist.book_id = book.book_id " +
                     "WHERE user.user_id = {}".format(_user_id))
     wishlist = _cursor.fetchall()
-    print("\n --- Items in Wishlist ---")
+    print("\n --- Books in Wishlist ---\n")
     for book in wishlist:
         print(" Book Name: {}\n Author: {}\n".format(book[4], book[5]))
 
@@ -89,7 +89,7 @@ def show_books_to_add(_cursor, _user_id):
     print(query)
     _cursor.execute(query)
     books_to_add = _cursor.fetchall()
-    print("\n --- Available Books ---")
+    print("\n --- Available Books ---\n")
     for book in books_to_add:
         print(" Book ID: {}\n Book Name: {}\n".format(book[0], book[1]))
 
