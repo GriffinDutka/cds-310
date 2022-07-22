@@ -4,6 +4,8 @@
     Date: 10 July 2022
     Description: WhatABook database initialization script.
 */
+CREATE DATABASE whatabook;
+USE whatabook;
 
 -- drop test user if exists 
 DROP USER IF EXISTS 'whatabook_user'@'localhost';
@@ -13,10 +15,6 @@ CREATE USER 'whatabook_user'@'localhost' IDENTIFIED WITH mysql_native_password B
 
 -- grant all privileges to the whatabook database to user whatabook_user on localhost 
 GRANT ALL PRIVILEGES ON whatabook.* TO'whatabook_user'@'localhost';
-
--- drop contstraints if they exist
-ALTER TABLE wishlist DROP FOREIGN KEY fk_book;
-ALTER TABLE wishlist DROP FOREIGN KEY fk_user;
 
 -- drop tables if they exist
 DROP TABLE IF EXISTS store;
@@ -86,10 +84,10 @@ INSERT INTO book(book_name, author, details)
     VALUES('The Last Olympian', 'Rick Riordian', 'Fifth part of the five part series');
 
 INSERT INTO book(book_name, author, details)
-    VALUES('The Great Gatsby', 'F. Scott Fitzgerald');
-    
+    VALUES('The Great Gatsby', 'F. Scott Fitzgerald', 'Amazing Book');
+
 INSERT INTO book(book_name, author, details)
-    VALUES("Blade Runner", 'Philip K. Dick', 'Classic Sci-fi Novel');
+    VALUES('Blade Runner', 'Philip K. Dick', 'Classic Sci-fi Novel');
 
 INSERT INTO book(book_name, author, details)
     VALUES('The Hunger Games', 'Suzanne Collins', 'Sci-fi Trilogy');
